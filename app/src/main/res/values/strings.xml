@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GrainAugerCalculator</string>
+    <string name="go_to_calculate_button">go to calculate</string>
+    <string name="diameter_of_hole">Diameter of Hole</string>
+    <string name="diameter_of_spindle">Diameter of spindle</string>
+    <string name="grain_auger_length">Grain auger length</string>
+    <string name="screw_step">Screw step</string>
+    <string name="external_diameter">External diameter</string>
+    <string name="internal_diameter">Internal diameter</string>
+    <string name="external_cutout">External cutout</string>
+    <string name="internal_cutout">Internal cutout</string>
+    <string name="cut_angle">Cut angle</string>
 </resources>
