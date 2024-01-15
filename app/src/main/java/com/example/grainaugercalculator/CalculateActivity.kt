@@ -1,6 +1,7 @@
 package com.example.grainaugercalculator
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -47,6 +48,11 @@ class CalculateActivity : AppCompatActivity() {
     private fun calculate_D(bD: Double, sD: Double, step: Double): String{
         if(bD == 0.0 || sD == 0.0 || step == 0.0){
             Toast.makeText(this, "You wrote NOT DIGITS or less then 0", Toast.LENGTH_LONG).show()
+            val button: Button = findViewById(R.id.button)
+            button.setOnClickListener {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
         }
         val a: Double = (bD-sD)/2
         val L: Double = sqrt((PI*bD).pow(2)+step.pow(2))
@@ -79,7 +85,7 @@ class CalculateActivity : AppCompatActivity() {
         val r: Double = (((a*l)/(L-l))*100.0).roundToInt()/100.0
         val R: Double = ((r+a)*100.0).roundToInt()/100.0
         val alfa: Double = (((2*PI*R)-L)/(2*PI*R))*360
-        val T: Double = sqrt((R.pow(2))+(R.pow(2))-((2*R*R)* cos(alfa)))
+        val T: Double = ((sqrt((R.pow(2))+(R.pow(2))-((2*R*R)* cos(alfa))))*100.0).roundToInt()/100.0
         val betta: Double = (2*PI)-alfa
         return T.toString()
     }
@@ -96,7 +102,7 @@ class CalculateActivity : AppCompatActivity() {
         val R: Double = ((r+a)*100.0).roundToInt()/100.0
         val alfa: Double = (((2*PI*R)-L)/(2*PI*R))*360
         val betta: Double = (2*PI)-alfa
-        return alfa.toString()
+        return ((alfa*100.0).roundToInt()/100.0).toString()
     }
 
     private fun calculate_alfa(bD: Double, sD: Double, step: Double): String{
@@ -111,6 +117,6 @@ class CalculateActivity : AppCompatActivity() {
         val R: Double = ((r+a)*100.0).roundToInt()/100.0
         val alfa: Double = (((2*PI*R)-L)/(2*PI*R))*360
         val betta: Double = (2*PI)-alfa
-        return alfa.toString()
+        return ((alfa*100.0).roundToInt()/100.0).toString()
     }
 }
